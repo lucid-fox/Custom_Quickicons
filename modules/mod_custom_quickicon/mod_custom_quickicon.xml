@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" client="administrator" method="upgrade">
+	<name>Custom Quick Icons</name>
+	<author>Joomill Extensions</author>
+	<creationDate>09-10-2021</creationDate>
+	<copyright>Copyright (C) 2021 Joomill. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>info@joomill-extensions.com</authorEmail>
+	<authorUrl>https://www.joomill-extensions.com</authorUrl>
+	<version>1.0.0</version>
+	<description>MOD_CUSTOM_QUICKICON_XML_DESCRIPTION</description>
+	<namespace path="src">Joomill\Module\Customquickicon</namespace>
+	<files>
+		<filename module="mod_custom_quickicon">mod_custom_quickicon.php</filename>
+		<folder>forms</folder>
+		<folder>language</folder>
+		<folder>services</folder>
+		<folder>src</folder>
+		<folder>tmpl</folder>
+	</files>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field
+						name="article_items"
+						type="subform"
+						formsource="/administrator/modules/mod_custom_quickicon/forms/article_items.xml"
+						multiple="true"
+						label="MOD_CUSTOM_QUICKICON_FORM_ARTICLE_LABEL"
+				/>
+				<field
+						name="category_items"
+						type="subform"
+						formsource="/administrator/modules/mod_custom_quickicon/forms/category_items.xml"
+						multiple="true"
+						label="MOD_CUSTOM_QUICKICON_FORM_ARTICLES_CATEGORY_LABEL"
+				/>
+				<field
+						name="module_items"
+						type="subform"
+						formsource="/administrator/modules/mod_custom_quickicon/forms/module_items.xml"
+						multiple="true"
+						label="MOD_CUSTOM_QUICKICON_FORM_MODULE_LABEL"
+				/>
+				<field
+						name="custom_items"
+						type="subform"
+						formsource="/administrator/modules/mod_custom_quickicon/forms/custom_items.xml"
+						multiple="true"
+						label="MOD_CUSTOM_QUICKICON_FORM_ITEMS_LABEL"
+				/>
+			</fieldset>
+			<fieldset name="default">
+				<field
+						name="show_global"
+						type="radio"
+						label="MOD_CUSTOM_QUICKICON_SHOW_GLOBAL_LABEL"
+						layout="joomla.form.field.radio.switcher"
+						default="0"
+				>
+					<option value="0">JHIDE</option>
+					<option value="1">JSHOW</option>
+				</field>
+				<field
+						name="show_checkin"
+						type="list"
+						label="MOD_CUSTOM_QUICKICON_SHOW_CHECKIN_LABEL"
+						default="0"
+						validate="options"
+				>
+					<option value="0">JHIDE</option>
+					<option value="1">JSHOW</option>
+					<option value="2">MOD_CUSTOM_QUICKICON_WITH_COUNT</option>
+				</field>
+				<field
+						name="show_cache"
+						type="list"
+						label="MOD_CUSTOM_QUICKICON_SHOW_CACHE_LABEL"
+						default="0"
+						validate="options"
+				>
+					<option value="0">JHIDE</option>
+					<option value="1">JSHOW</option>
+					<option value="2">MOD_CUSTOM_QUICKICON_WITH_COUNT</option>
+				</field>
+				<field
+						name="show_users"
+						type="list"
+						label="MOD_CUSTOM_QUICKICON_SHOW_USERS_LABEL"
+						default="0"
+						validate="options"
+				>
+					<option value="0">JHIDE</option>
+					<option value="1">JSHOW</option>
+					<option value="2">MOD_CUSTOM_QUICKICON_WITH_COUNT</option>
+				</field>
+				<field
+						name="show_articles"
+						type="list"
+						label="MOD_CUSTOM_QUICKICON_SHOW_ARTICLES_LABEL"
+						default="0"
+						validate="options"
+				>
+					<option value="0">JHIDE</option>
+					<option value="1">JSHOW</option>
+					<option value="2">MOD_CUSTOM_QUICKICON_WITH_COUNT</option>
+				</field>
+				<field
+						name="show_modules"
+						type="list"
+						label="MOD_CUSTOM_QUICKICON_SHOW_MODULES_LABEL"
+						default="0"
+						validate="options"
+				>
+					<option value="0">JHIDE</option>
+					<option value="1">JSHOW</option>
+					<option value="2">MOD_CUSTOM_QUICKICON_WITH_COUNT</option>
+				</field>
+				<field
+						name="show_categories"
+						type="list"
+						label="MOD_CUSTOM_QUICKICON_SHOW_CATEGORIES_LABEL"
+						default="0"
+						validate="options"
+				>
+					<option value="0">JHIDE</option>
+					<option value="1">JSHOW</option>
+					<option value="2">MOD_CUSTOM_QUICKICON_WITH_COUNT</option>
+				</field>
+				<field
+						name="show_media"
+						type="radio"
+						label="MOD_CUSTOM_QUICKICON_SHOW_MEDIA_LABEL"
+						layout="joomla.form.field.radio.switcher"
+						default="0"
+				>
+					<option value="0">JHIDE</option>
+					<option value="1">JSHOW</option>
+				</field>
+				<field
+						name="show_menuitems"
+						type="list"
+						label="MOD_CUSTOM_QUICKICON_SHOW_MENUITEMS_LABEL"
+						default="0"
+						validate="options"
+				>
+					<option value="0">JHIDE</option>
+					<option value="1">JSHOW</option>
+					<option value="2">MOD_CUSTOM_QUICKICON_WITH_COUNT</option>
+				</field>
+				<field
+						name="show_plugins"
+						type="list"
+						label="MOD_CUSTOM_QUICKICON_SHOW_PLUGINS_LABEL"
+						default="0"
+						validate="options"
+				>
+					<option value="0">JHIDE</option>
+					<option value="1">JSHOW</option>
+					<option value="2">MOD_CUSTOM_QUICKICON_WITH_COUNT</option>
+				</field>
+				<field
+						name="show_template_styles"
+						type="radio"
+						label="MOD_CUSTOM_QUICKICON_SHOW_TEMPLATE_STYLES_LABEL"
+						layout="joomla.form.field.radio.switcher"
+						default="0"
+				>
+					<option value="0">JHIDE</option>
+					<option value="1">JSHOW</option>
+				</field>
+				<field
+						name="show_template_code"
+						type="radio"
+						label="MOD_CUSTOM_QUICKICON_SHOW_TEMPLATE_CODE_LABEL"
+						layout="joomla.form.field.radio.switcher"
+						default="0"
+				>
+					<option value="0">JHIDE</option>
+					<option value="1">JSHOW</option>
+				</field>
+			</fieldset>
+
+			<fieldset name="hikashop">
+				<field
+						name="show_hikashop_dashboard"
+						type="radio"
+						label="MOD_CUSTOM_QUICKICON_SHOW_HIKASHOP_DASHBOARD_LABEL"
+						layout="joomla.form.field.radio.switcher"
+						default="0"
+				>
+					<option value="0">JHIDE</option>
+					<option value="1">JSHOW</option>
+				</field>
+
+				<field
+						name="show_hikashop_products"
+						type="radio"
+						label="MOD_CUSTOM_QUICKICON_SHOW_HIKASHOP_PRODUCTS_LABEL"
+						layout="joomla.form.field.radio.switcher"
+						default="0"
+				>
+					<option value="0">JHIDE</option>
+					<option value="1">JSHOW</option>
+				</field>
+
+				<field
+						name="show_hikashop_categories"
+						type="radio"
+						label="MOD_CUSTOM_QUICKICON_SHOW_HIKASHOP_CATEGORIES_LABEL"
+						layout="joomla.form.field.radio.switcher"
+						default="0"
+				>
+					<option value="0">JHIDE</option>
+					<option value="1">JSHOW</option>
+				</field>
+
+				<field
+						name="show_hikashop_users"
+						type="radio"
+						label="MOD_CUSTOM_QUICKICON_SHOW_HIKASHOP_USERS_LABEL"
+						layout="joomla.form.field.radio.switcher"
+						default="0"
+				>
+					<option value="0">JHIDE</option>
+					<option value="1">JSHOW</option>
+				</field>
+
+				<field
+						name="show_hikashop_orders"
+						type="radio"
+						label="MOD_CUSTOM_QUICKICON_SHOW_HIKASHOP_ORDERS_LABEL"
+						layout="joomla.form.field.radio.switcher"
+						default="0"
+				>
+					<option value="0">JHIDE</option>
+					<option value="1">JSHOW</option>
+				</field>
+
+				<field
+						name="show_hikashop_discounts"
+						type="radio"
+						label="MOD_CUSTOM_QUICKICON_SHOW_HIKASHOP_DISCOUNTS_LABEL"
+						layout="joomla.form.field.radio.switcher"
+						default="0"
+				>
+					<option value="0">JHIDE</option>
+					<option value="1">JSHOW</option>
+				</field>
+
+				<field
+						name="show_hikashop_coupons"
+						type="radio"
+						label="MOD_CUSTOM_QUICKICON_SHOW_HIKASHOP_COUPONS_LABEL"
+						layout="joomla.form.field.radio.switcher"
+						default="0"
+				>
+					<option value="0">JHIDE</option>
+					<option value="1">JSHOW</option>
+				</field>
+
+				<field
+						name="show_hikashop_carts"
+						type="radio"
+						label="MOD_CUSTOM_QUICKICON_SHOW_HIKASHOP_CARTS_LABEL"
+						layout="joomla.form.field.radio.switcher"
+						default="0"
+				>
+					<option value="0">JHIDE</option>
+					<option value="1">JSHOW</option>
+				</field>
+
+				<field
+						name="show_hikashop_wishlist"
+						type="radio"
+						label="MOD_CUSTOM_QUICKICON_SHOW_HIKASHOP_WISHLIST_LABEL"
+						layout="joomla.form.field.radio.switcher"
+						default="0"
+				>
+					<option value="0">JHIDE</option>
+					<option value="1">JSHOW</option>
+				</field>
+
+				<field
+						name="show_hikashop_waitlist"
+						type="radio"
+						label="MOD_CUSTOM_QUICKICON_SHOW_HIKASHOP_WAITLIST_LABEL"
+						layout="joomla.form.field.radio.switcher"
+						default="0"
+				>
+					<option value="0">JHIDE</option>
+					<option value="1">JSHOW</option>
+				</field>
+
+				<field
+						name="show_hikashop_emailhistory"
+						type="radio"
+						label="MOD_CUSTOM_QUICKICON_SHOW_HIKASHOP_EMAILHISTORY_LABEL"
+						layout="joomla.form.field.radio.switcher"
+						default="0"
+				>
+					<option value="0">JHIDE</option>
+					<option value="1">JSHOW</option>
+				</field>
+
+				<field
+						name="show_hikashop_config"
+						type="radio"
+						label="MOD_CUSTOM_QUICKICON_SHOW_HIKASHOP_CONFIG_LABEL"
+						layout="joomla.form.field.radio.switcher"
+						default="0"
+				>
+					<option value="0">JHIDE</option>
+					<option value="1">JSHOW</option>
+				</field>
+			</fieldset>
+
+			<fieldset name="advanced">
+				<field
+						name="context"
+						type="text"
+						label="MOD_CUSTOM_QUICKICON_GROUP_LABEL"
+						default="mod_custom_quickicon"
+				/>
+				<field
+						name="header_icon"
+						type="Iconpicker"
+						label="MOD_CUSTOM_QUICKICON_HEADER_ICON_LABEL"
+				/>
+				<field
+					name="layout"
+					type="modulelayout"
+					label="JFIELD_ALT_LAYOUT_LABEL"
+					class="form-select"
+					validate="moduleLayout"
+				/>
+
+				<field
+					name="moduleclass_sfx"
+					type="textarea"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					rows="3"
+					validate="CssIdentifier"
+				/>
+
+				<field
+					name="cache"
+					type="list"
+					label="COM_MODULES_FIELD_CACHING_LABEL"
+					default="0"
+					filter="integer"
+					validate="options"
+					>
+					<option value="1">JGLOBAL_USE_GLOBAL</option>
+					<option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+
+				<field
+					name="cache_time"
+					type="number"
+					label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+					default="900"
+					filter="integer"
+				/>
+			</fieldset>
+		</fields>
+	</config>
+	<updateservers>
+		<server type="extension" priority="1" name="Custom Quick Icons"><![CDATA[https://www.joomill-extensions.com/index.php?option=com_rdsubs&view=updater&format=xml&cat=13]]></server>
+	</updateservers>
+</extension>

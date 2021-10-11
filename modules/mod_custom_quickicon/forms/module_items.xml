@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form>
+    <fieldset name="custom_items" label="Custom Items"
+              addfieldpath="/administrator/modules/mod_custom_quickicon/fields">
+        <field name="item_id"
+               type="sql"
+               default=""
+               label="MOD_CUSTOM_QUICKICON_ITEM_ARTICLE_LABEL"
+               sql_select="id, title"
+               sql_from="#__content"
+               sql_order="title ASC"
+               key_field="id"
+               value_field="title">
+        </field>
+        <field
+                name="item_icon"
+                type="Iconpicker"
+                default="far fa-file-alt"
+                label="MOD_CUSTOM_QUICKICON_ITEM_ICON_LABEL"
+                description="MOD_CUSTOM_QUICKICON_ITEM_ICON_DESC">
+        </field>
+    </fieldset>
+</form>
+

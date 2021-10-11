@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form>
+    <fieldset name="custom_items" label="Custom Items"
+              addfieldpath="/administrator/modules/mod_custom_quickicon/fields">
+        <field name="article_category"
+               type="sql"
+               default=""
+               label="MOD_CUSTOM_QUICKICON_ITEM_CATEGORY_LABEL"
+               sql_select="id, title"
+               sql_from="#__categories"
+               sql_filter="extension"
+               sql_default_extension="com_content"
+               sql_order="title ASC"
+               key_field="id"
+               value_field="title">
+        </field>
+        <field
+                name="article_language"
+                type="language"
+                client="site"
+                default="*"
+                label="Select a language">
+        <option value="*">JALL</option>
+        </field>
+        <field
+                name="item_icon"
+                type="Iconpicker"
+                default="fas fa-folder"
+                label="MOD_CUSTOM_QUICKICON_ITEM_ICON_LABEL"
+                description="MOD_CUSTOM_QUICKICON_ITEM_ICON_DESC">
+        </field>
+    </fieldset>
+</form>
+

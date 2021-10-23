@@ -8,7 +8,8 @@
 
 namespace Joomill\Module\Customquickicon\Administrator\Dispatcher;
 
-\defined('JPATH_PLATFORM') or die;
+// no direct access
+defined( '_JEXEC' ) or die( 'Restricted access' );
 
 use Joomla\CMS\Dispatcher\AbstractModuleDispatcher;
 

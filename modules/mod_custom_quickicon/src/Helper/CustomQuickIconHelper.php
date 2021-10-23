@@ -8,7 +8,8 @@
 
 namespace Joomill\Module\Customquickicon\Administrator\Helper;
 
-\defined('_JEXEC') or die;
+// no direct access
+defined( '_JEXEC' ) or die( 'Restricted access' );
 
 use Joomla\CMS\Application\CMSApplication;
 use Joomla\CMS\Factory;
@@ -16,6 +17,7 @@ use Joomla\CMS\Plugin\PluginHelper;
 use Joomla\CMS\Router\Route;
 use Joomla\Registry\Registry;
 use Joomill\Module\Customquickicon\Administrator\Event\CustomQuickIconsEvent;
+
 
 /**
  * Helper for mod_custom_quickicon
@@ -456,12 +458,18 @@ class CustomQuickIconHelper
 
             foreach ($items as $item)
 			{
+
                 $quickicon = [
 					'image'   => $item->item_icon,
-					'link'    => Route::_($item->item_link),
 					'name'    => $item->item_name,
                     'group'   => $context,
 				];
+                if ($item->item_link_menuitem == "custom") {
+                    $quickicon['link'] = Route::_($item->item_link);
+                } else {
+                    $quickicon['link'] = Route::_($item->item_link_menuitem);
+                }
+
                 if ($item->item_link_add)
                 {
                     $quickicon['linkadd'] = Route::_($item->item_link_add);

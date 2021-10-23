@@ -2,12 +2,12 @@
 <extension type="module" client="administrator" method="upgrade">
 	<name>Custom Quick Icons</name>
 	<author>Joomill Extensions</author>
-	<creationDate>09-10-2021</creationDate>
+	<creationDate>24-10-2021</creationDate>
 	<copyright>Copyright (C) 2021 Joomill. All rights reserved.</copyright>
-	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<license>GNU/GPLv3 www.gnu.org/licenses/gpl-3.0.html</license>
 	<authorEmail>info@joomill-extensions.com</authorEmail>
 	<authorUrl>https://www.joomill-extensions.com</authorUrl>
-	<version>1.0.0</version>
+	<version>1.1.0</version>
 	<description>MOD_CUSTOM_QUICKICON_XML_DESCRIPTION</description>
 	<namespace path="src">Joomill\Module\Customquickicon</namespace>
 	<files>
@@ -324,7 +324,7 @@
 				/>
 				<field
 						name="header_icon"
-						type="Iconpicker"
+						type="text"
 						label="MOD_CUSTOM_QUICKICON_HEADER_ICON_LABEL"
 				/>
 				<field

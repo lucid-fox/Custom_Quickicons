@@ -8,7 +8,8 @@
 
 namespace Joomill\Module\Customquickicon\Administrator\Event;
 
-\defined('_JEXEC') or die;
+// no direct access
+defined( '_JEXEC' ) or die( 'Restricted access' );
 
 use Joomla\CMS\Event\AbstractEvent;
 

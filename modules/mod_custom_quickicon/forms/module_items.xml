@@ -5,20 +5,20 @@
         <field name="item_id"
                type="sql"
                default=""
-               label="MOD_CUSTOM_QUICKICON_ITEM_ARTICLE_LABEL"
+               label="MOD_CUSTOM_QUICKICON_ITEM_MODULE_LABEL"
                sql_select="id, title"
-               sql_from="#__content"
+               sql_from="#__modules"
                sql_order="title ASC"
                key_field="id"
                value_field="title">
         </field>
         <field
                 name="item_icon"
-                type="Iconpicker"
-                default="far fa-file-alt"
+                type="text"
+                default="fas fa-boxes"
                 label="MOD_CUSTOM_QUICKICON_ITEM_ICON_LABEL"
-                description="MOD_CUSTOM_QUICKICON_ITEM_ICON_DESC">
-        </field>
+                description="MOD_CUSTOM_QUICKICON_ITEM_ICON_DESC"
+        />
     </fieldset>
 </form>
 

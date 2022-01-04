@@ -19,6 +19,12 @@
                 label="MOD_CUSTOM_QUICKICON_ITEM_ICON_LABEL"
                 description="MOD_CUSTOM_QUICKICON_ITEM_ICON_DESC"
         />
+        <field
+                name="item_return"
+                type="text"
+                label="MOD_CUSTOM_QUICKICON_ITEM_RETURN_LABEL"
+                description="MOD_CUSTOM_QUICKICON_ITEM_RETURN_DESC"
+        />
     </fieldset>
 </form>
 

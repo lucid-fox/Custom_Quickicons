@@ -138,6 +138,9 @@ class CustomQuickIconHelper
                     'name'    => $title,
                     'group'   => $context,
                 ];
+                if($item->item_return) {
+                    $quickicon['link'] .= '&return=' . urlencode(base64_encode($item->item_return));
+                }
 
                 $this->buttons[$key][] = $quickicon;
             }
@@ -232,7 +235,9 @@ class CustomQuickIconHelper
                     'name'    => $title,
                     'group'   => $context,
                 ];
-
+                if($item->item_return) {
+                    $quickicon['link'] .= '&return=' . urlencode(base64_encode($item->item_return));
+                }
                 $this->buttons[$key][] = $quickicon;
             }
 
